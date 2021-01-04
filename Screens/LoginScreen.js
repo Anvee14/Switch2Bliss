@@ -8,9 +8,11 @@ import {
     StyleSheet,
     TouchableOpacity,
     Alert,
-    ScrollView
-} from 'react-native';
+    ScrollView,
+    Image,
 
+} from 'react-native';
+import { Input, Icon } from 'react-native-elements'
 import db from '../config';
 import firebase from 'firebase';
 
@@ -37,7 +39,8 @@ export default class LoginScreen extends Component {
                 .then(() => {
                     db.collection('users').add({
                         email_id: this.state.emailId,
-                        nick_name: this.state.nickName
+                        nick_name: this.state.nickName,
+                        password: this.state.password
                     })
                     return alert(
                         'User Added Successfully',
@@ -150,53 +153,87 @@ export default class LoginScreen extends Component {
     }
     render() {
         return (
-            <View style={styles.container}>
-                <View style={{ justifyContent: 'center', alignItems: 'center' }}>
 
-                </View>
+            <View style={styles.container}>
+
+
                 {
                     this.showModal()
                 }
-                <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+                <View >
                     <Text style={styles.heading}>Welcome</Text>
                 </View>
-                <View>
-                    <TextInput
-                        style={styles.loginBox}
-                        placeholder="Email"
-                        keyboardType='email-address'
-                        onChangeText={(text) => {
-                            this.setState({
-                                emailId: text
-                            })
-                        }}
-                    />
-                    <TextInput
-                        style={styles.loginBox}
-                        secureTextEntry={true}
-                        placeholder="enter Password"
-                        onChangeText={(text) => {
-                            this.setState({
-                                password: text
-                            })
-                        }}
-                    />
-                    <TouchableOpacity
-                        style={[styles.button, { marginBottom: 20, marginTop: 20 }]}
-                        onPress={() => {
-                            this.userLogin(this.state.emailId, this.state.password)
-                        }}
-                    >
-                        <Text style={styles.buttonText}>Login</Text>
-                    </TouchableOpacity>
 
-                    <TouchableOpacity
-                        style={styles.button}
-                        onPress={() => this.setState({ isModalVisible: true })}
-                    >
-                        <Text style={styles.buttonText}>SignUp</Text>
-                    </TouchableOpacity>
+                <View >
+                    <View style={styles.sectionStyle}>
+                        <Input
+                            inputContainerStyle={styles.loginBox}
+                            placeholder="Email"
+                            placeholderStyle={{ fontSize: 60 }}
+                            leftIcon={<Icon
+                                type='font-awesome'
+                                name='envelope'
+                                size={35}
+                                style={styles.icon}
+                            />
+                            }
+
+                            keyboardType='email-address'
+                            onChangeText={(text) => {
+                                this.setState({
+                                    emailId: text
+                                })
+                            }}
+                        />
+
+                        <Image
+                            style={styles.imageStyle}
+                            source={{ uri: 'https://media.tenor.com/images/ada461a147f3d051b15d3abfca53aa7a/tenor.gif' }}
+                        />
+                    </View>
+                    <View style={styles.sectionStyle}>
+
+                        <Input
+                            inputContainerStyle={styles.loginBox}
+                            secureTextEntry={true}
+                            placeholder="Password"
+                            leftIcon={<Icon
+                                type='font-awesome'
+                                name='lock'
+                                size={35}
+                                style={styles.icon}
+                            />
+                            }
+                            onChangeText={(text) => {
+                                this.setState({
+                                    password: text
+                                })
+                            }}
+                        />
+                        <Image
+                            style={styles.imageStyle}
+
+                        />
+                    </View>
+                    <View style={{ alignContent: 'center', justifyContent: 'center' }}>
+                        <TouchableOpacity
+                            style={[styles.button, { marginBottom: 20, marginTop: 20 }]}
+                            onPress={() => {
+                                this.userLogin(this.state.emailId, this.state.password)
+                            }}
+                        >
+                            <Text style={styles.buttonText}>Login</Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity
+                            style={styles.button}
+                            onPress={() => this.setState({ isModalVisible: true })}
+                        >
+                            <Text style={styles.buttonText}>SignUp</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
+
             </View>
         )
     }
@@ -205,40 +242,60 @@ export default class LoginScreen extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#65C7D0',
+        backgroundColor: '#8EBCEE',
         alignItems: 'center',
         justifyContent: 'center'
     },
     heading: {
-        fontSize: 50,
+        fontSize: RFValue(50),
         fontStyle: 'italic',
-        marginTop: -300,
         alignItems: 'center',
+        paddingBottom: RFValue(30),
+
+
+    },
+    icon: {
+
+    },
+    sectionStyle: {
+        flexDirection: 'row',
         justifyContent: 'center',
-        marginLeft: 'center'
+        alignItems: 'center',
+        borderBottomWidth: 0,
+        height: 50,
+        margin: 20,
+
+        paddingLeft: RFValue(10)
+    },
+    imageStyle: {
+        marginBottom: '13.5%',
+        height: 80,
+        width: 155,
+        resizeMode: 'stretch',
+        marginLeft: RFValue(-158)
     },
     text: {
-        fontSize: 30,
+        fontSize: RFValue(20),
         fontStyle: 'italic',
         alignItems: 'center',
         justifyContent: 'center'
     },
     loginBox: {
-        width: RFValue(220),
-        height: RFValue(50),
-
-        borderColor: "black",
-        fontSize: RFValue(20),
-        paddingLeft: RFValue(10),
-        borderBottomWidth: 2,
+        width: RFValue(320),
+        height: RFValue(40),
+        fontSize: RFValue(30),
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderColor: '#000000',
+        borderBottomWidth: 3
     },
     button: {
-        width: RFValue(150),
-        height: RFValue(50),
+        width: RFValue(170),
+        height: RFValue(45),
         justifyContent: "center",
         alignItems: "center",
         borderRadius: RFValue(25),
-        backgroundColor: "#32867D",
+        backgroundColor: "#65C7D0",
         shadowColor: "#000",
         marginBottom: RFValue(10),
         shadowOffset: {
@@ -248,11 +305,11 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.7,
         shadowRadius: 10.32,
         elevation: 26,
-        marginLeft: 33
+        marginLeft: '28%'
     },
     buttonText: {
         color: "black",
-        fontWeight: '300',
+        fontWeight: "400",
         fontSize: RFValue(20),
     },
     label: {
@@ -260,7 +317,7 @@ const styles = StyleSheet.create({
         color: "#717D7E",
         fontWeight: 'bold',
         paddingLeft: RFValue(10),
-        marginLeft: RFValue(20)
+        //marginLeft: RFValue(20)
     },
     formInput: {
         width: "90%",
@@ -270,7 +327,7 @@ const styles = StyleSheet.create({
         borderRadius: 2,
         borderColor: "black",
         paddingBottom: RFValue(10),
-        marginLeft: RFValue(20),
+        //  marginLeft: RFValue(20),
         marginBottom: RFValue(14)
     },
     registerButton: {
@@ -284,7 +341,7 @@ const styles = StyleSheet.create({
     },
     registerButtonText: {
         fontSize: RFValue(12),
-        fontWeight: "350",
+        fontWeight: "normal",
         color: "black",
     },
     cancelButtonText: {
@@ -313,7 +370,7 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: "#22737a",
+        backgroundColor: "#ADD8E6",
         marginRight: 30,
         marginLeft: 30,
         marginTop: 80,
@@ -337,6 +394,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginTop: 5,
     },
+    gif: {
+        width: RFValue(130),
+        height: RFValue(70),
+        marginLeft: "30%",
+        marginTop: "5%"
+
+    }
 
 })
 
