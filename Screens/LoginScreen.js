@@ -20,6 +20,7 @@ import { RFValue } from "react-native-responsive-fontsize";
 
 
 export default class LoginScreen extends Component {
+    
     constructor() {
         super();
         this.state = {
@@ -264,15 +265,15 @@ const styles = StyleSheet.create({
         borderBottomWidth: 0,
         height: 50,
         margin: 20,
-
+        borderBottomWidth: 3,
         paddingLeft: RFValue(10)
     },
     imageStyle: {
-        marginBottom: '13.5%',
+        marginBottom: '3%',
         height: 80,
-        width: 155,
+        width: 135,
         resizeMode: 'stretch',
-        marginLeft: RFValue(-158)
+        marginLeft: RFValue(-130)
     },
     text: {
         fontSize: RFValue(20),
@@ -281,13 +282,14 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     loginBox: {
-        width: RFValue(320),
+        width: RFValue(230),
         height: RFValue(40),
         fontSize: RFValue(30),
         alignItems: 'center',
         justifyContent: 'center',
         borderColor: '#000000',
-        borderBottomWidth: 3
+        marginTop:RFValue(35),
+       marginLeft: RFValue(-10)
     },
     button: {
         width: RFValue(170),

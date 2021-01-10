@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac239f67-a892-48cd-b2f8-53bf314cae63" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Screens/EnterProb.js" beforeDir="false" afterPath="$PROJECT_DIR$/Screens/EnterProb.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Screens/LoginScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/Screens/LoginScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Anxiety.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Anxiety.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Depression.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Depression.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Stress.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Stress.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/loneliness.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/loneliness.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/selfesteem.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/selfesteem.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/sleep.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
@@ -25,7 +32,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
@@ -102,13 +109,13 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="96" y="16" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.720@0.0.1280.720" timestamp="1609343601875" />
-    <state x="110" y="120" width="1060" height="480" key="AVDManager" timestamp="1609342297883">
+    <state x="231" y="285" width="1060" height="480" key="AVDManager" timestamp="1610275317960">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="110" y="120" width="1060" height="480" key="AVDManager/0.0.1280.720@0.0.1280.720" timestamp="1609342297883" />
-    <state x="142" y="6" key="SettingsEditor" timestamp="1609341035736">
+    <state x="231" y="285" width="1060" height="480" key="AVDManager/0.0.1280.720@0.0.1280.720" timestamp="1610275317960" />
+    <state x="142" y="6" key="SettingsEditor" timestamp="1610204506355">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="142" y="6" key="SettingsEditor/0.0.1280.720@0.0.1280.720" timestamp="1609341035736" />
+    <state x="142" y="6" key="SettingsEditor/0.0.1280.720@0.0.1280.720" timestamp="1610204506355" />
   </component>
 </project>
